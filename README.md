@@ -8,7 +8,7 @@ Options:
   -e  <string> : Endpoint (REQUIRED)
   --protocol <string> : Protocol (default: https)
   -m  <string> : Metric name (e.g. /customMetrics - REQUIRED)
-  -m  <string> : Label to make result unique (e.g. "server=\"test\"")
+  -l  <string> : Label to make result unique (e.g. "server=\"test\"")
   -o  <string> : Comparison operators: eq, ne, gt, lt, ge, le (default: gt)
   -w  <number> : Warning threshold (default: 0)
   -c  <number> : Critical threshold (default: 0)

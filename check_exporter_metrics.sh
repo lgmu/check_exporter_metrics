@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 PROGNAME=$(basename $0)
-RELEASE="Version 0.2"
+RELEASE="Version 0.2.1"
 
 STATE_OK=0
 STATE_WARNING=1
@@ -47,7 +47,7 @@ print_usage() {
         echo "  -e  <string> : Endpoint (REQUIRED)"
         echo "  --protocol <string> : Protocol (default: https)"
         echo "  -m  <string> : Metric name (e.g. /customMetrics - REQUIRED)"
-        echo "  -m  <string> : Label to make result unique (e.g. \"server=\\\"test\\\"\")"
+        echo "  -l  <string> : Label to make result unique (e.g. \"server=\\\"test\\\"\")"
         echo "  -o  <string> : Comparison operators: eq, ne, gt, lt, ge, le (default: gt)"
         echo "  -w  <number> : Warning threshold (default: 0)"
         echo "  -c  <number> : Critical threshold (default: 0)"
