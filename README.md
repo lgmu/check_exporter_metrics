@@ -1,5 +1,5 @@
 ## check_exporter_metrics.sh - Check exporter metrics
-
+```
 Usage: check_exporter_metrics.sh -H HOST -p PORT -e ENDPOINT -m METRIC [options]
 
 Options:
@@ -18,3 +18,4 @@ Options:
 
 This plugin can check exporter metrics from a http(s) endpoint
 and check the result against the thresholds
+```
