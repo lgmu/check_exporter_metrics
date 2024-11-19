@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 PROGNAME=$(basename $0)
-RELEASE="Version 0.2.1"
+RELEASE="Version 0.2.2"
 
 STATE_OK=0
 STATE_WARNING=1
@@ -168,14 +168,14 @@ fi
 METRICS=$(echo "$DATA" | grep -i "$METRIC{")
 readarray -t METRICS_ARRAY <<<"$METRICS"
 declare -a RESULTS
-pattern="^${METRIC}\{[^}]*${LABEL}[^}]*\} ([0-9]+)$"
+pattern="^${METRIC}\{[^}]*${LABEL}[^}]*\} (.*)$"
 
 # loop over data that matched
 for line in "${METRICS_ARRAY[@]}"; do
     if [[ "$line" =~ $pattern ]]; then
-        VALUE=${BASH_REMATCH[1]}
+        VALUE=$(printf "%.0f" "${BASH_REMATCH[1]}")
         RESULTS+=("$VALUE")
-        OUTPUT="$line"
+        OUTPUT=$(echo "$line" | sed "s/${BASH_REMATCH[1]}/$VALUE/")
     fi
 done
 
